@@ -1,6 +1,6 @@
 package org.chxm.poointerfaces.repositorio.list;
 
-import org.chxm.poointerfaces.modelo.Cliente;
+import org.chxm.poointerfaces.excepciones.LecturaAccesoDatoException;
 import org.chxm.poointerfaces.modelo.Producto;
 import org.chxm.poointerfaces.repositorio.AbstractListRepositorio;
 import org.chxm.poointerfaces.repositorio.Direccion;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ProductoListRepositorio extends AbstractListRepositorio<Producto> {
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto pr = porId(producto.getId());
         pr.setDescripcion(producto.getDescripcion());
         pr.setPrecio(producto.getPrecio());

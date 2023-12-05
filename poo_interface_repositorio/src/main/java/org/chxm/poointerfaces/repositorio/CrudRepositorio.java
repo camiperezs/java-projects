@@ -1,12 +1,12 @@
 package org.chxm.poointerfaces.repositorio;
+import org.chxm.poointerfaces.excepciones.AccesoDatoException;
 import java.util.List;
-
 public interface CrudRepositorio<T> {
     List<T> listar();
-    T porId(Integer id);
-    void crear(T t);
-    void editar(T t);
-    void eliminar(Integer id);
+    T porId(Integer id) throws AccesoDatoException;
+    void crear(T t) throws AccesoDatoException;
+    void editar(T t) throws AccesoDatoException;
+    void eliminar(Integer id) throws AccesoDatoException;
 
 
 }
